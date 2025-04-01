@@ -1,0 +1,14 @@
+.header-flex {
+    display: flex;
+    flex: 100px;
+    background-color: wheat;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    margin-left: 100px;
+    object-fit: cover;
+    height: 100px;
+}

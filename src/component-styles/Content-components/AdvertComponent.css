@@ -1,0 +1,12 @@
+.advert-flex {
+
+    display: flex;
+
+}
+
+
+.advert-flex img {
+
+    width: 100%;
+    height: 500px;
+}
