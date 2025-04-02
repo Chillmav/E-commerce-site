@@ -1,5 +1,5 @@
 .advert-flex {
-
+    position: relative;
     display: flex;
 
 }
@@ -9,4 +9,30 @@
 
     width: 100%;
     height: 500px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
+}
+
+.go-to-next-advert {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 20%;
+    bottom: 20%;
+    right: 0;
+    width: 100px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.go-to-previous-advert {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 20%;
+    bottom: 20%;
+    left: 0;
+    width: 100px;
+    cursor: pointer;
+    z-index: 100;
 }
