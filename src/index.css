@@ -1,12 +1,13 @@
 body {
     margin: 0;
     background-color: rgb(226, 226, 226);
+    height: 10000px;
 }
 
 .root {
     font-family: Roboto;
     display: grid;
     grid-template-rows: 100px 1fr;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }

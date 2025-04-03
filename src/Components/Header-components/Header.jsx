@@ -2,7 +2,7 @@ import '../../component-styles/Header-components/Header.css'
 import Searchbar from './Searchbar'
 import RightSection from './RightSection';
 import { SiWoocommerce } from "react-icons/si";
-function Header() {
+function Header( {selectedCategory, setSelectedCategory} ) {
     return(
 
         <div
@@ -15,7 +15,10 @@ function Header() {
             style={ {cursor: 'pointer' } }
             onClick={() => window.location.href = '/'}
             />
-            <Searchbar />
+            <Searchbar
+            selectedCategory = {selectedCategory}
+            setSelectedCategory = {setSelectedCategory}
+             />
             <RightSection />
         </div>
     )

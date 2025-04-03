@@ -2,11 +2,10 @@ import '../../component-styles/Header-components/CategoriesInput.css'
 import { SlArrowDown } from "react-icons/sl"
 import { useState } from 'react'
 
-function CategoriesInput() {
+function CategoriesInput( {selectedCategory, setSelectedCategory} ) {
 
     const Categories = ['All Categories', 'Electronics', 'Clothing', 'Books', 'Home', 'Beauty', 'Sports', 'Toys', 'Automotive', 'Jewelry'];
     const [categories, setCategories] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
     function handleCategoryClick(category) {
         const categoryText = category.target.innerText;

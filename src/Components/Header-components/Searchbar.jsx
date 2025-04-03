@@ -2,13 +2,16 @@ import '../../component-styles/Header-components/Searchbar.css'
 import { Search } from "lucide-react";
 import CategoriesInput from './CategoriesInput';
 
-function Searchbar() {
+function Searchbar( {selectedCategory, setSelectedCategory} ) {
     return(
         <div
         className="search-bar"
         >
             
-           <CategoriesInput />
+           <CategoriesInput
+           selectedCategory={selectedCategory}
+           setSelectedCategory={setSelectedCategory}
+            />
 
             <input
             placeholder="What you need?"

@@ -2,6 +2,8 @@
     background-color: gray;
     margin-right: 10%;
     margin-left: 10%;
+    display: grid;
+    grid-template-rows: 500px 300px;
 }
 /* i want to make the page content take up the rest of the page */
 
