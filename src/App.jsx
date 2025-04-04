@@ -1,21 +1,13 @@
 import './App.css'
-import Header from './Components/Header-components/Header'
-import PageContent from './Components/Content-components/PageContent'
-import { useState } from 'react';
+import HomePage from './Components/Pages/HomePage';
+
 function App() {
 
-  const [selectedCategory, setSelectedCategory] = useState('All Categories');
-
   return (
+
     <>
-      <Header
-      selectedCategory = {selectedCategory}
-      setSelectedCategory = {setSelectedCategory}
-      />
-      <PageContent
-      selectedCategory = {selectedCategory}
-      setSelectedCategory = {setSelectedCategory}
-      />
+      <HomePage
+       />
     </>
   )
 }
