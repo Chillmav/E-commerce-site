@@ -1,6 +1,7 @@
 import '../../component-styles/Content-components/PageContent.css'
 import AdvertComponent from './AdvertComponent'
 import BestSellers from './BestSellers'
+import ProductsGrid from './ProductsGrid'
 
 function PageContent( {selectedCategory} ) {
 
@@ -11,12 +12,15 @@ function PageContent( {selectedCategory} ) {
                 <BestSellers
                 selectedCategory = {selectedCategory}
                  />
+                <ProductsGrid
+                selectedCategory = {selectedCategory}
+                 />
             </div>
         )
 
 }
 
-        export default PageContent
+export default PageContent
 
 
 
