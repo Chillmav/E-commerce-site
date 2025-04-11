@@ -9,6 +9,7 @@ function ProductsGrid( {selectedCategory} ) {
         >
             {items[`Electronics`].map((item) => (
                 <ProductContainer
+                item = {item}
                 itemImg = {item.img}
                 itemName = {item.name}
                 itemStars = {item.stars}

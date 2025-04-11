@@ -1,8 +1,13 @@
 import '../../component-styles/Content-components/ProductContainer.css'
 import { priceFromCents } from '../../utils/price';
-function ProductContainer({ itemImg, itemName, itemStars, 
-    itemRatingsNumber, itemPrice, itemBestseller}) {
+import { useRef } from 'react';
+import { useCart } from '../CartContext';
 
+function ProductContainer({ itemImg, itemName, itemStars, 
+    itemRatingsNumber, itemPrice, itemBestseller, item}) {
+    
+    const myRef = useRef(null);
+    const { addToCart } = useCart();
     return (
         <div
         className="product-container"
@@ -41,6 +46,7 @@ function ProductContainer({ itemImg, itemName, itemStars,
                 </div>
                 <select
                 className='select-bar'
+                ref={myRef}
                 >
                     <option value='1' className='option'>1</option>    
                     <option value='2' className='option'>2</option>
@@ -51,6 +57,11 @@ function ProductContainer({ itemImg, itemName, itemStars,
                 </select>
                 <button
                 className='add-to-cart-button'
+                onClick={() => {
+
+                    addToCart(item, myRef)
+
+                }}
                 >
                     Add to cart
                 </button>

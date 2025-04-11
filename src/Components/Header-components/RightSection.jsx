@@ -1,14 +1,13 @@
 import '../../component-styles/Header-components/RightSection.css'
 import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa";
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useCart } from '../CartContext';
 
 function RightSection() {
 
-    const [cartValue, setCartValue] = useState(0);
-    
+    const { cart, calculateCartQuantity } = useCart();
+    const cartQuantity = calculateCartQuantity(cart);
     return(
         <div
         className="right-section-flex"
@@ -23,7 +22,7 @@ function RightSection() {
                 />
                     <p
                     className='cart-value'>
-                        {cartValue}</p>
+                        {cartQuantity}</p>
                 <p className='cart-text'>Cart</p>
             </div>
         </Link>
