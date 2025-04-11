@@ -1,5 +1,5 @@
 import '../../component-styles/Content-components/ProductContainer.css'
-import { priceFromCents } from '../../functions/price';
+import { priceFromCents } from '../../utils/price';
 function ProductContainer({ itemImg, itemName, itemStars, 
     itemRatingsNumber, itemPrice, itemBestseller}) {
 

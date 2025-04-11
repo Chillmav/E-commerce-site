@@ -1,5 +1,5 @@
 import Header from '../Header-components/Header'
-import PageContent from '../Content-components/PageContent'
+import PageContent from '../Home-components/PageContent'
 import { useState } from 'react';
 
 function HomePage() {

@@ -1,5 +1,5 @@
 import '../../component-styles/Content-components/ProductsGrid.css'
-import ProductContainer from './ProductContainer';
+import ProductContainer from './ProductContainer.jsx';
 import items from '../../../public/Electronics/electronics.jsx'
 
 function ProductsGrid( {selectedCategory} ) {

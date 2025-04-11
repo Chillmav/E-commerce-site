@@ -3,6 +3,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function RightSection() {
 
@@ -12,6 +13,7 @@ function RightSection() {
         <div
         className="right-section-flex"
         >
+        <Link to='/cart' style={{textDecoration: 'none', color: 'black'}}>
             <div
             className='cart-icon-container'>
                 <CiShoppingCart
@@ -24,6 +26,7 @@ function RightSection() {
                         {cartValue}</p>
                 <p className='cart-text'>Cart</p>
             </div>
+        </Link>
             <div
             className='user-icon-container'>
                 <CiUser
