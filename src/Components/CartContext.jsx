@@ -4,7 +4,7 @@ const CartContext = createContext();
 
 export function CartProvider({ children }) {
 
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState( JSON.parse(localStorage.getItem('cart')) || []);
 
     function addToCart(item, ref) {
 
@@ -19,11 +19,11 @@ export function CartProvider({ children }) {
                     ...newCart[existingItemIndex],
                     count: newCart[existingItemIndex].count + count
                 }
-
+                localStorage.setItem('cart', JSON.stringify(cart))
                 return newCart
 
             } else {
-
+                localStorage.setItem('cart', JSON.stringify([...prevCart, {...item, count}]))
                 return [...prevCart, {...item, count}]
                 
             }

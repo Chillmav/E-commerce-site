@@ -1,0 +1,19 @@
+.counter-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.counter {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.counter-button {
+    padding: 8px 15px;
+    font-size: 20px;
+    border-radius: 0;
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+}
