@@ -19,7 +19,7 @@ export function CartProvider({ children }) {
                     ...newCart[existingItemIndex],
                     count: newCart[existingItemIndex].count + count
                 }
-                localStorage.setItem('cart', JSON.stringify(cart))
+                localStorage.setItem('cart', JSON.stringify(newCart))
                 return newCart
 
             } else {
@@ -45,21 +45,38 @@ export function CartProvider({ children }) {
                 }
                 return item
             })
-
+            localStorage.setItem('cart', JSON.stringify(updatedCart))
             setCart(updatedCart)
 
             }
          else { // removing if operation is equal to false
-            const updatedCart = cart.map(item => {
+            const updatedCart = cart.reduce((acc, item) => {
 
                 if (item.id === id) {
-                    return {...item, count: item.count - count}
+                    if (item.count - count <= 0) {
+                        return acc
+                    } else {
+                        acc.push({...item, count: item.count - count})
+                    }
+                    
+                } else {
+                    acc.push(item);
                 }
-                return item
-            })
+                
+                return acc
+            }, [])
 
+            localStorage.setItem('cart', JSON.stringify(updatedCart))
             setCart(updatedCart)
         }
+    }
+
+    function removeProduct(id) {
+
+        const updatedCart = cart.filter(item => item.id !== id)
+        
+        setCart(updatedCart)
+
     }
     function calculateCartQuantity(cart) {
 
@@ -79,7 +96,8 @@ export function CartProvider({ children }) {
             cart, 
             addToCart, 
             calculateCartQuantity,
-            changeItemQuantity
+            changeItemQuantity,
+            removeProduct
           }}>
             {children}
         </CartContext.Provider>

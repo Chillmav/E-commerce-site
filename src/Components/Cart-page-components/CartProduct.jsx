@@ -1,7 +1,10 @@
 import QuantityCounter from "./QuantityCounter"
 import './../../component-styles/Cart-components/CartProduct.css'
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useCart } from "../CartContext";
 export default function CartProduct({ img, price, count, name, id }) {
+
+    const { removeProduct } = useCart();
 
     return (
         <div
@@ -13,6 +16,9 @@ export default function CartProduct({ img, price, count, name, id }) {
                 <RiDeleteBin6Line
                 size={40}
                 color="rgb(214, 82, 82)"
+                onClick={() => {
+                    removeProduct(id);
+                }}
                 />
                 <div className="bin-pop-up-info">
                     Remove Product from your Cart
