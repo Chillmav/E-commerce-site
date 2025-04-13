@@ -30,7 +30,37 @@ export function CartProvider({ children }) {
             
         })
     }
+    
+    function changeItemQuantity(id, count, operation) {
 
+        count = count || 1;
+
+        // adding if operation is equal to true
+        if (operation) {
+            
+            const updatedCart = cart.map(item => {
+
+                if (item.id === id) {
+                    return {...item, count: item.count + count}
+                }
+                return item
+            })
+
+            setCart(updatedCart)
+
+            }
+         else { // removing if operation is equal to false
+            const updatedCart = cart.map(item => {
+
+                if (item.id === id) {
+                    return {...item, count: item.count - count}
+                }
+                return item
+            })
+
+            setCart(updatedCart)
+        }
+    }
     function calculateCartQuantity(cart) {
 
     let totalQuantity = 0;
@@ -48,7 +78,8 @@ export function CartProvider({ children }) {
         <CartContext.Provider value={{ 
             cart, 
             addToCart, 
-            calculateCartQuantity
+            calculateCartQuantity,
+            changeItemQuantity
           }}>
             {children}
         </CartContext.Provider>
