@@ -1,13 +1,31 @@
 import '../../component-styles/Content-components/ProductContainer.css'
 import { priceFromCents } from '../../utils/price';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useCart } from '../CartContext';
 
 function ProductContainer({ itemImg, itemName, itemStars, 
     itemRatingsNumber, itemPrice, itemBestseller, item}) {
     
     const myRef = useRef(null);
+    const [ addedToCart, setAddedToCart ] = useState(false);
     const { addToCart } = useCart();
+    let timeoutRef = useRef(null);
+
+    function addedToCartText() {
+        setAddedToCart(true)
+
+        if (addedToCart) {
+
+            clearTimeout(timeoutRef.current);
+
+        }
+
+        timeoutRef.current = setTimeout(() => {
+            setAddedToCart(false);
+        }, 2000)
+
+    }
+
     return (
         <div
         className="product-container"
@@ -55,16 +73,24 @@ function ProductContainer({ itemImg, itemName, itemStars,
                     <option value='5' className='option'>5</option>
 
                 </select>
+                <div
+                className='added-to-div'
+                >
+                <p
+                className='added-to-cart-text'
+                style={{display: addedToCart ? 'block' : 'none'}}
+                >Added to Cart</p>
                 <button
                 className='add-to-cart-button'
                 onClick={() => {
 
-                    addToCart(item, myRef)
-
+                    addToCart(item, myRef);
+                    addedToCartText();
                 }}
                 >
                     Add to cart
                 </button>
+                </div>
             </div>
         </div>
     );
