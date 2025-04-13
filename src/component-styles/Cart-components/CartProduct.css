@@ -1,11 +1,12 @@
 .cart-item-flex {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     max-height: 200px;
     column-gap: 20px;
     background-color: white;
-    width: 800px;
+    width: fit-content;
     margin: auto;
     min-height: 200px;
     padding: 10px;
@@ -28,4 +29,29 @@
     min-width: 150px;
     align-items: center;
     justify-content: center;
+}
+
+.bin-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.bin-pop-up-info {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: fit-content;
+    background-color: rgb(212, 212, 212);
+    z-index: 100;
+    padding: 5px 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    border-radius: 10px;
+}
+
+.bin-icon:hover .bin-pop-up-info {
+    opacity: 1;
+    
 }
