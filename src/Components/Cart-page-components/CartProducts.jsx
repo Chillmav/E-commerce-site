@@ -1,26 +1,33 @@
 import { useCart } from "../CartContext";
 import CartProduct from "./CartProduct";
-import { priceFromCents } from "../../utils/price";
 import './../../component-styles/Cart-components/CartProducts.css'
+import CartSummarize from "./CartSummarize";
+import CartInfo from "./CartInfo";
 export default function CartProducts() {
     const { cart } = useCart();
     if (cart.length) {
         return (
             <div
-            className="cart-flex"
-            >  
-                {cart.map((item) => (
-                    <CartProduct
-                    key={item.id}
-                    img={item.img}
-                    price={priceFromCents(item.price)}
-                    count={item.count}
-                    name={item.name}
-                    id={item.id}
-                     />
-                ))}
+            className="cart-flex-main"
+            >   
+                <div
+                className="cart-flex"
+                >  
+                    <CartInfo />
+                    {cart.map((item) => (
+                        <CartProduct
+                        key={item.id}
+                        img={item.img}
+                        price={item.price}
+                        count={item.count}
+                        name={item.name}
+                        id={item.id}
+                        />
+                    ))}
 
-            </div>  
+                </div>
+                <CartSummarize />
+            </div>
         )
     }
 

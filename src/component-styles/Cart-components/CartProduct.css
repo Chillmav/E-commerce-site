@@ -54,3 +54,9 @@
 .bin-icon:hover .bin-pop-up-info {
     opacity: 1;
 }
+
+.cart-product-price {
+    font-size: 20px;
+    width: 100px;
+    text-align: end;
+}

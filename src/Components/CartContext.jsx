@@ -76,6 +76,7 @@ export function CartProvider({ children }) {
         const updatedCart = cart.filter(item => item.id !== id)
         
         setCart(updatedCart)
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
 
     }
     function calculateCartQuantity(cart) {
