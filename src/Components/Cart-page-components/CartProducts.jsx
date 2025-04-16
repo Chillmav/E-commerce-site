@@ -2,7 +2,6 @@ import { useCart } from "../CartContext";
 import CartProduct from "./CartProduct";
 import './../../component-styles/Cart-components/CartProducts.css'
 import CartSummarize from "./CartSummarize";
-import CartInfo from "./CartInfo";
 export default function CartProducts() {
     const { cart } = useCart();
     if (cart.length) {
@@ -10,10 +9,12 @@ export default function CartProducts() {
             <div
             className="cart-flex-main"
             >   
+                <p
+                className="review-order"
+                >Review your Order</p>
                 <div
                 className="cart-flex"
                 >  
-                    <CartInfo />
                     {cart.map((item) => (
                         <CartProduct
                         key={item.id}

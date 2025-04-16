@@ -1,5 +1,44 @@
 .cart-summarize-flex {
     width: 500px;
-    height: 500px;
+    height: 400px;
     background-color: white;
+    border: solid 2px rgb(194, 194, 194);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 30px;
+    border-bottom: solid 1px;
+    
+}
+
+.order-summary-text {
+    font-size: 25px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+.order-total-flex {
+    display: flex;
+    font-size: 20px;
+    margin: 0px 30px;
+    color: brown;
+    justify-content: space-between;
+}
+
+.place-order-button {
+
+    background-color: rgb(255, 216, 20);
+    width: calc(100% - 60px);
+    height: 40px;
+    margin: 0px 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }

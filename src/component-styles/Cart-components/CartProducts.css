@@ -1,11 +1,24 @@
 .cart-flex {
     display: flex;
     flex-direction: column;
-    
+    height: fit-content;
+    margin-top: 50px;
+    row-gap: 10px;
 }
 .cart-flex-main {
     display: flex;
     flex-direction: row;
-    column-gap: 200px;
+    column-gap: 50px;
     justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin-left: 100px;
+}
+
+.review-order {
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    font-weight: 600;
+    top: -5px;
 }

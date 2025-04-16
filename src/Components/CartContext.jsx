@@ -92,13 +92,22 @@ export function CartProvider({ children }) {
         return totalQuantity
     
     }
+    function calculateCartValue(cart) {
+
+        return cart.reduce((acc, item) =>{
+
+            return acc + item.price * item.count
+
+        }, 0)
+    }
     return (
         <CartContext.Provider value={{ 
             cart, 
             addToCart, 
             calculateCartQuantity,
             changeItemQuantity,
-            removeProduct
+            removeProduct,
+            calculateCartValue
           }}>
             {children}
         </CartContext.Provider>

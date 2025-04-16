@@ -10,7 +10,8 @@
     margin: auto;
     min-height: 200px;
     padding: 10px;
-    border-bottom: solid 2px gray;
+    border: solid 2px rgb(194, 194, 194);
+    border-radius: 10px;
 }
 
 .cart-product-img {
