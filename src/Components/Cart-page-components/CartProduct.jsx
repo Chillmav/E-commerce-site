@@ -3,6 +3,7 @@ import './../../component-styles/Cart-components/CartProduct.css'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCart } from "../CartContext";
 import { priceFromCents } from "../../utils/price";
+import CartDeliveryOptions from "./CartDeliveryOptions";
 export default function CartProduct({ img, price, count, name, id }) {
 
     const { removeProduct } = useCart();
@@ -28,17 +29,26 @@ export default function CartProduct({ img, price, count, name, id }) {
             <div className="img-div">
                 <img src= {`./Electronics/${img}`} className="cart-product-img"/>
             </div>
-            
-            <p className="cart-product-name">{name}</p>
-            <QuantityCounter
-            id = {id}
-            count = {count}
-             />
-            <p
-            className="cart-product-price"
+            <div
+            className="product-info"
             >
-                {priceFromCents(price * count)} 
-            </p>
+                <p className="cart-product-name">
+
+                    {name}
+
+                </p>
+                <QuantityCounter
+                    id = {id}
+                    count = {count}
+                    />
+                <p
+                className="cart-product-price">
+
+                    {priceFromCents(price * count)} 
+
+                </p>
+            </div>
+            <CartDeliveryOptions />
         </div>
     )
 

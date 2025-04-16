@@ -1,0 +1,13 @@
+.delivery-options-flex {
+
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 250px;
+    height: 160px;
+
+}
+
+.choose-options-text {
+    margin-bottom: 2px;
+}

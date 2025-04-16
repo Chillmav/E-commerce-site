@@ -21,8 +21,7 @@
 }
 
 .cart-product-name {
-    width: 400px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .img-div {
@@ -59,5 +58,8 @@
 .cart-product-price {
     font-size: 20px;
     width: 100px;
-    text-align: end;
+}
+
+.product-info {
+    width: 180px;
 }
