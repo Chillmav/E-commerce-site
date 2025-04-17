@@ -1,13 +1,13 @@
 import '../../component-styles/Content-components/ProductsGrid.css'
 import ProductContainer from './ProductContainer.jsx';
-import items from '../../../public/Electronics/electronics.jsx'
+import items from '../../../public/Items/items.jsx'
 
 function ProductsGrid( {selectedCategory} ) {
     return (
         <div
         className="products-grid"
         >
-            {items[`Electronics`].map((item) => (
+            {items[selectedCategory].map((item) => (
                 <ProductContainer
                 item = {item}
                 itemImg = {item.img}

@@ -3,7 +3,7 @@ import { SlArrowDown } from "react-icons/sl"
 import { useState } from 'react'
 
 function CategoriesInput({ selectedCategory, setSelectedCategory }) {
-    const Categories = ['All Categories', 'Electronics', 'Clothing', 'Books', 'Home', 'Beauty', 'Sports', 'Toys', 'Automotive', 'Jewelry'];
+    const Categories = ['All', 'Electronics'];
     const [categories, setCategories] = useState(false);
 
     function handleCategoryClick(event) {

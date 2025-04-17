@@ -1,5 +1,5 @@
 import '../../component-styles/Content-components/BestSellers.css'
-import items from '../../../public/Electronics/electronics';
+import items from '../../../public/Items/items.jsx';
 
 function BestSellers( {selectedCategory} ) {
 
@@ -10,11 +10,11 @@ function BestSellers( {selectedCategory} ) {
             <p
             className='best-sellers-text'
             >Best sellers {selectedCategory}</p>
-            {items['Electronics'].map((item) => { if (item.bestseller) {
+            {items[selectedCategory].map((item) => { if (item.bestseller) {
                 return (
                     <img
                     className='small-img'
-                    src={`./${selectedCategory}/${item.img}`}
+                    src={`./Items/${item.img}`}
                     key={item.id}
                     />
                 ) 

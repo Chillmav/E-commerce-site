@@ -4,6 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCart } from "../CartContext";
 import { priceFromCents } from "../../utils/price";
 import CartDeliveryOptions from "./CartDeliveryOptions";
+
 export default function CartProduct({ img, price, count, name, id }) {
 
     const { removeProduct } = useCart();
@@ -27,7 +28,7 @@ export default function CartProduct({ img, price, count, name, id }) {
                 </div>
             </div>
             <div className="img-div">
-                <img src= {`./Electronics/${img}`} className="cart-product-img"/>
+                <img src= {`./Items/${img}`} className="cart-product-img"/>
             </div>
             <div
             className="product-info"
@@ -48,7 +49,13 @@ export default function CartProduct({ img, price, count, name, id }) {
 
                 </p>
             </div>
-            <CartDeliveryOptions />
+
+
+            <CartDeliveryOptions
+            productId={id}
+            />
+
+
         </div>
     )
 

@@ -4,8 +4,10 @@ import './../../component-styles/Cart-components/CartProducts.css'
 import CartSummarize from "./CartSummarize";
 import { useState } from "react";
 export default function CartProducts() {
+
     const { cart } = useCart();
-    const [deliveryCost, setDeliveryCost] = useState(0);
+    const [deliveryOptions, setDeliveryOptions] = useState([]);
+
     if (cart.length) {
         return (
             <div
@@ -25,7 +27,8 @@ export default function CartProducts() {
                         count={item.count}
                         name={item.name}
                         id={item.id}
-                        deliveryCost={deliveryCost}
+                        deliveryOptions={deliveryOptions}
+                        setDeliveryOptions={setDeliveryOptions}
                         />
                     ))}
 

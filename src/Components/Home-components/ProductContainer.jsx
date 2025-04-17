@@ -36,7 +36,7 @@ function ProductContainer({ itemImg, itemName, itemStars,
             >bestseller</p>
             <img
             className='product-img'
-            src={`./Electronics/${itemImg}`}
+            src={`./Items/${itemImg}`}
             />
             <div
             className='item-info'

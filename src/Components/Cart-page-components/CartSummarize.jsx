@@ -8,7 +8,6 @@ export default function CartSummarize() {
     const shipping = 1499;
     const cartValue = calculateCartValue(cart);
     const tax = (cartValue + shipping) * 0.1
-    console.log(cartValue + shipping);
     if (cart.length) {
         return (
         <div

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function HomePage() {
 
-    const [selectedCategory, setSelectedCategory] = useState('All Categories');
+    const [selectedCategory, setSelectedCategory] = useState('Electronics');
 
         return (
           <>

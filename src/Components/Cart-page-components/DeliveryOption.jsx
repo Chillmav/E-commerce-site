@@ -1,13 +1,15 @@
 import './../../component-styles/Cart-components/DeliveryOption.css'
+import { priceFromCents } from '../../utils/price';
+export default function DeliveryOption({ date, cost, productId }) {
 
-export default function DeliveryOption({ date, cost }) {
     let shippingCostInfo = ''
     if (!cost) {
         shippingCostInfo = 'Free Shipping'
     } else {
-        shippingCostInfo = `$${cost} - Shipping`
+        shippingCostInfo = `${priceFromCents(cost)} - Shipping`
     }
     return (
+        
         <div
         className='delivery-option'
         >

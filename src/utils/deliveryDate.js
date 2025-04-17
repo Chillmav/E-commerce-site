@@ -2,12 +2,25 @@ import dayjs from "dayjs";
 
 const today = dayjs();
 
-const deliveryDates = {
+const deliveryDates = [
+    {   
+        id: 1,
+        date: today.add(1, 'day').format('dddd, MMMM DD'),
+        shippingCost: 0
+    },
+    
+    {
+        id: 2,
+        date: today.add(3, 'day').format('dddd, MMMM DD'),
+        shippingCost: 499
+    }
+    ,
+    {
+        id: 3,
+        date: today.add(7, 'day').format('dddd, MMMM DD'),
+        shippingCost: 999
+    }
 
-    tommorow: today.add(1, 'day').format('dddd, MMMM DD'),
-    day3: today.add(3, 'day').format('dddd, MMMM DD'),
-    day7: today.add(7, 'day').format('dddd, MMMM DD')
-
-};
+];
 
 export default deliveryDates
