@@ -6,7 +6,8 @@ import { useState } from "react";
 export default function CartProducts() {
 
     const { cart } = useCart();
-    const [deliveryOptions, setDeliveryOptions] = useState([]);
+
+    const [deliveryCost, setDeliveryCost] = useState(0);
 
     if (cart.length) {
         return (
@@ -27,14 +28,15 @@ export default function CartProducts() {
                         count={item.count}
                         name={item.name}
                         id={item.id}
-                        deliveryOptions={deliveryOptions}
-                        setDeliveryOptions={setDeliveryOptions}
+                        deliveryCost = {deliveryCost}
+                        setDeliveryCost = {setDeliveryCost}
                         />
                     ))}
 
                 </div>
                 <div>
                 <CartSummarize
+                deliveryCost = {deliveryCost}
                  />
                 </div>
             </div>

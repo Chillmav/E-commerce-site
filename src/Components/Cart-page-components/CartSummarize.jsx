@@ -1,13 +1,12 @@
 import './../../component-styles/Cart-components/CartSummarize.css'
 import { useCart } from '../CartContext'
 import { priceFromCents } from '../../utils/price';
-export default function CartSummarize() {
+export default function CartSummarize({ deliveryCost }) {
 
     const { cart, calculateCartQuantity, calculateCartValue } = useCart();
 
-    const shipping = 1499;
     const cartValue = calculateCartValue(cart);
-    const tax = (cartValue + shipping) * 0.1
+    const tax = (cartValue + deliveryCost) * 0.1
     if (cart.length) {
         return (
         <div
@@ -30,13 +29,13 @@ export default function CartSummarize() {
                 className='row-flex'
                 >
                     <p>Shipping:</p>
-                    <p>{priceFromCents(shipping)}</p> 
+                    <p>{priceFromCents(deliveryCost)}</p> 
                 </div>
                 <div
                 className='row-flex'
                 >
                     <p>Total before tax:</p>
-                    <p>{priceFromCents(cartValue + shipping)}</p>
+                    <p>{priceFromCents(cartValue + deliveryCost)}</p>
                 </div>
                 <div
                 className='row-flex'
@@ -49,7 +48,7 @@ export default function CartSummarize() {
                 className='order-total-flex'
                 >
                     <p>Order Total: </p>
-                    <p>{priceFromCents(cartValue + shipping + tax)}</p>
+                    <p>{priceFromCents(cartValue + deliveryCost + tax)}</p>
                 </div>
                 <button
                 className='place-order-button'

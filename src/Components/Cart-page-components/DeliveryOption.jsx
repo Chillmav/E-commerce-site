@@ -1,7 +1,7 @@
 import './../../component-styles/Cart-components/DeliveryOption.css'
 import { priceFromCents } from '../../utils/price';
-export default function DeliveryOption({ date, cost, productId }) {
-
+export default function DeliveryOption({ date, cost, selectedOption, onSelect, id }) {
+    
     let shippingCostInfo = ''
     if (!cost) {
         shippingCostInfo = 'Free Shipping'
@@ -17,6 +17,11 @@ export default function DeliveryOption({ date, cost, productId }) {
                 type='radio'
                 size='30px'
                 style={{cursor: 'pointer'}}
+                value={id}
+                checked={selectedOption === id}
+                onChange={() => {
+                    onSelect(id)
+                }}
                 >
                 </input>
 

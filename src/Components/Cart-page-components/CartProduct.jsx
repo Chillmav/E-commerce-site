@@ -4,8 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCart } from "../CartContext";
 import { priceFromCents } from "../../utils/price";
 import CartDeliveryOptions from "./CartDeliveryOptions";
-
-export default function CartProduct({ img, price, count, name, id }) {
+export default function CartProduct({ img, price, count, name, id, deliveryCost, setDeliveryCost }) {
 
     const { removeProduct } = useCart();
 
@@ -52,7 +51,8 @@ export default function CartProduct({ img, price, count, name, id }) {
 
 
             <CartDeliveryOptions
-            productId={id}
+            deliveryCost = {deliveryCost}
+            setDeliveryCost = {setDeliveryCost}
             />
 
 
